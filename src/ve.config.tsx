@@ -39,6 +39,7 @@ import {
   HeadingBlock as Heading,
 } from "./components/atoms/heading";
 import { CTABlock as CTA, CTABlockProps } from "./components/atoms/cta";
+import { ImageBlockProps, ImageBlock as Image } from "./components/Image";
 
 import "@yext/visual-editor/style.css";
 
@@ -52,6 +53,7 @@ type FinancialProfessionalProps = {
   Columns: ColumnsProps;
   Heading: HeadingBlockProps;
   CTA: CTABlockProps;
+  Image: ImageBlockProps;
 };
 
 const queryClient = new QueryClient();
@@ -70,6 +72,10 @@ export const financialProfessionalConfig: Config<FinancialProfessionalProps> = {
       title: "Buttons",
       components: ["CTA"],
     },
+    images: {
+      title: "Images",
+      components: ["Image"],
+    },
     content: {
       title: "Content",
       components: ["FinProHero", "Services", "SocialPosts", "LeadForm"],
@@ -85,6 +91,7 @@ export const financialProfessionalConfig: Config<FinancialProfessionalProps> = {
     Container,
     Columns,
     CTA,
+    Image,
   },
   root: {
     render: ({ children }) => {
