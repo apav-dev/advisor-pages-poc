@@ -19,7 +19,6 @@ import {
   LeadFormProps,
   LeadFormComponent as LeadForm,
 } from "./components/financial-professional/LeadForm";
-import { AnalyticsProvider } from "@yext/pages-components";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useDocument } from "@yext/pages/util";
 import { FinancialprofessionalStream } from "./types/autogen";
@@ -35,6 +34,11 @@ import {
   ColumnsProps,
   ColumnsComponent as Columns,
 } from "./components/Columns";
+import {
+  HeadingBlockProps,
+  HeadingBlock as Heading,
+} from "./components/atoms/heading";
+import { CTABlock as CTA, CTABlockProps } from "./components/atoms/cta";
 
 import "@yext/visual-editor/style.css";
 
@@ -46,12 +50,33 @@ type FinancialProfessionalProps = {
   Section: SectionBlockProps;
   Container: ContainerProps;
   Columns: ColumnsProps;
+  Heading: HeadingBlockProps;
+  CTA: CTABlockProps;
 };
 
 const queryClient = new QueryClient();
 
 export const financialProfessionalConfig: Config<FinancialProfessionalProps> = {
+  categories: {
+    layout: {
+      title: "Layout",
+      components: ["Section", "Container", "Columns"],
+    },
+    text: {
+      title: "Text",
+      components: ["Heading"],
+    },
+    buttons: {
+      title: "Buttons",
+      components: ["CTA"],
+    },
+    content: {
+      title: "Content",
+      components: ["FinProHero", "Services", "SocialPosts", "LeadForm"],
+    },
+  },
   components: {
+    Heading,
     FinProHero,
     Services,
     SocialPosts,
@@ -59,6 +84,7 @@ export const financialProfessionalConfig: Config<FinancialProfessionalProps> = {
     Section,
     Container,
     Columns,
+    CTA,
   },
   root: {
     render: ({ children }) => {
