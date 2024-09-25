@@ -29,13 +29,15 @@ const Header = () => {
       </EntityField>
 
       <li className="flex items-center">
-        <EntityField displayName="Phone" fieldId="mainPhone">
-          <CTA
-            variant={"link"}
-            label={formatPhoneNumber(mainPhone)}
-            url={`tel:${mainPhone}`}
-          />
-        </EntityField>
+        {mainPhone && (
+          <EntityField displayName="Phone" fieldId="mainPhone">
+            <CTA
+              variant={"link"}
+              label={formatPhoneNumber(mainPhone)}
+              url={`tel:${mainPhone}`}
+            />
+          </EntityField>
+        )}
       </li>
       <li>
         <CTA variant={"primary"} label={"Contact Me"} url={"#"} />
@@ -125,15 +127,17 @@ const Header = () => {
                         <div className="space-y-6">
                           <MenuItems />
                         </div>
-                        <div className="mt-6 pt-6 border-t border-gray-200">
-                          <a
-                            href={`tel:${mainPhone}`}
-                            className="flex items-center rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                          >
-                            <Phone className="mr-2 h-5 w-5" />
-                            {formatPhoneNumber(mainPhone)}
-                          </a>
-                        </div>
+                        {mainPhone && (
+                          <div className="mt-6 pt-6 border-t border-gray-200">
+                            <a
+                              href={`tel:${mainPhone}`}
+                              className="flex items-center rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                            >
+                              <Phone className="mr-2 h-5 w-5" />
+                              {formatPhoneNumber(mainPhone)}
+                            </a>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </Dialog.Panel>

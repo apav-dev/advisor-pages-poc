@@ -153,6 +153,18 @@ export const locationConfig: Config<LocationProps> = {
     Columns,
     Heading,
   },
+  root: {
+    render: ({ children }) => {
+      return (
+        <QueryClientProvider client={queryClient}>
+          <Header />
+          {children}
+          <Footer />
+        </QueryClientProvider>
+      );
+    },
+    fields: {},
+  },
 };
 
 export const componentRegistry = new Map<string, Config<any>>([
