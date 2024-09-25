@@ -56,6 +56,15 @@ type FinancialProfessionalProps = {
   Image: ImageBlockProps;
 };
 
+type LocationProps = {
+  Image: ImageBlockProps;
+  CTA: CTABlockProps;
+  Section: SectionBlockProps;
+  Container: ContainerProps;
+  Columns: ColumnsProps;
+  Heading: HeadingBlockProps;
+};
+
 const queryClient = new QueryClient();
 
 export const financialProfessionalConfig: Config<FinancialProfessionalProps> = {
@@ -117,6 +126,36 @@ export const financialProfessionalConfig: Config<FinancialProfessionalProps> = {
   },
 };
 
+export const locationConfig: Config<LocationProps> = {
+  categories: {
+    layout: {
+      title: "Layout",
+      components: ["Section", "Container", "Columns"],
+    },
+    text: {
+      title: "Text",
+      components: ["Heading"],
+    },
+    buttons: {
+      title: "Buttons",
+      components: ["CTA"],
+    },
+    images: {
+      title: "Images",
+      components: ["Image"],
+    },
+  },
+  components: {
+    Image,
+    CTA,
+    Section,
+    Container,
+    Columns,
+    Heading,
+  },
+};
+
 export const componentRegistry = new Map<string, Config<any>>([
   ["Financial Professional", financialProfessionalConfig],
+  ["Location", locationConfig],
 ]);
