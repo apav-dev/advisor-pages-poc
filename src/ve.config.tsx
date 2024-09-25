@@ -48,50 +48,50 @@ type FinancialProfessionalProps = {
   Services: ServicesProps;
   SocialPosts: SocialPostsProps;
   LeadForm: LeadFormProps;
-  Section: SectionBlockProps;
-  Container: ContainerProps;
-  Columns: ColumnsProps;
-  Heading: HeadingBlockProps;
-  CTA: CTABlockProps;
-  Image: ImageBlockProps;
+  // Section: SectionBlockProps;
+  // Container: ContainerProps;
+  // Columns: ColumnsProps;
+  // Heading: HeadingBlockProps;
+  // CTA: CTABlockProps;
+  // Image: ImageBlockProps;
 };
 
 const queryClient = new QueryClient();
 
 export const financialProfessionalConfig: Config<FinancialProfessionalProps> = {
   categories: {
-    layout: {
-      title: "Layout",
-      components: ["Section", "Container", "Columns"],
-    },
-    text: {
-      title: "Text",
-      components: ["Heading"],
-    },
-    buttons: {
-      title: "Buttons",
-      components: ["CTA"],
-    },
-    images: {
-      title: "Images",
-      components: ["Image"],
-    },
+    // layout: {
+    //   title: "Layout",
+    //   components: ["Section", "Container", "Columns"],
+    // },
+    // text: {
+    //   title: "Text",
+    //   components: ["Heading"],
+    // },
+    // buttons: {
+    //   title: "Buttons",
+    //   components: ["CTA"],
+    // },
+    // images: {
+    //   title: "Images",
+    //   components: ["Image"],
+    // },
     content: {
       title: "Content",
       components: ["FinProHero", "Services", "SocialPosts", "LeadForm"],
     },
   },
   components: {
-    Heading,
+    // Heading,
     FinProHero,
     Services,
     SocialPosts,
     LeadForm,
-    Section,
-    Container,
-    Columns,
-    CTA,
-    Image,
+    // Section,
+    // Container,
+    // Columns,
+    // CTA,
+    // Image,
   },
   root: {
     render: ({ children }) => {
